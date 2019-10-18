@@ -15,11 +15,7 @@ class RingBuffer:
     return self.storage
 
 if __name__ == "__main__":
-
-
     buffer = RingBuffer(3)
-
-    
     print(buffer.get())
 
 
