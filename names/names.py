@@ -18,9 +18,22 @@ duplicates = []
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-# binary tree ?
-# while loop? 
 
+# put all elements of name_1 in a dict
+names_1_dict = dict()
+for name in names_1:
+    names_1_dict[name] = name
+
+
+# put all elements of name_2 in a dict
+names_2_dict = dict()
+for name in names_2:
+    names_2_dict[name] = name
+
+
+
+
+print(names_2_dict)
 
 
 end_time = time.time()
