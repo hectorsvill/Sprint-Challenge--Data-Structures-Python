@@ -24,15 +24,12 @@ names_1_dict = dict()
 for name in names_1:
     names_1_dict[name] = name
 
-
-
 # loop through names_2 and check if name exist in name_1_dict
-
 for name_2 in names_2:
 
     try:
+        # name exist so it is duplicate
          duplicates.append(names_1_dict[name_2])
-        # name exist so it is duplicate 
     except KeyError:
         # print("no duplicate")
         pass
