@@ -49,18 +49,19 @@ class LinkedList:
     prev = None
     cur = self.head
     while cur:
-      #store next node
-      node_store = cur.next_node
 
-      # reverse node here
-      self.head = prev
+      # stoe next node 
+      next_node = cur.next_node
 
-      # step forward cur and prev
-      # if node_store.value != None:
-        # print(node_store.value)
-      cur = node_store
+      # change cur to prev
+      # on first entry prev is set to None
+      cur.next_node = prev
+      
+      # step to next node 
       prev = cur
+      cur = next_node
 
+    self.head = prev
 
 
   def print_list(self):
