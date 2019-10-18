@@ -9,24 +9,18 @@ class RingBuffer:
     self.storage = [None]*capacity
 
   def append(self, item):
-
     # check if you went over capacity
     # set current back to 0 
-    print(self.current)
+    # print(self.current)
     if self.current == self.capacity:
       self.current = 0
 
+     # keep track of current item and set it with current 
     if self.current < self.capacity:
-      # keep track of current item and set it with current 
       self.storage[self.current] = item
       self.current += 1
 
-
-
-
   def get(self):
-    if self.current == 0:
-      return []
     # get all items that are not None
     return [item for item in self.storage if item != None]
 
