@@ -27,7 +27,8 @@ class RingBuffer:
   def get(self):
     if self.current == 0:
       return []
-    return self.storage
+    # get all items that are not None
+    return [item for item in self.storage if item != None]
 
 if __name__ == "__main__":
     buffer = RingBuffer(3)
@@ -36,6 +37,6 @@ if __name__ == "__main__":
     buffer.append('a')
     buffer.append('b')
     buffer.append('c')
-    buffer.append('d')
 
+    buffer.append('d')
     print(buffer.get())
