@@ -9,10 +9,20 @@ class RingBuffer:
     self.storage = [None]*capacity
 
   def append(self, item):
+
+    # check if you went over capacity
+    # set current back to 0 
+    print(self.current)
+    if self.current == self.capacity:
+      self.current = 0
+
     if self.current < self.capacity:
       # keep track of current item and set it with current 
       self.storage[self.current] = item
       self.current += 1
+
+
+
 
   def get(self):
     if self.current == 0:
