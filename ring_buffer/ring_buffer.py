@@ -1,3 +1,7 @@
+
+
+
+
 class RingBuffer:
   def __init__(self, capacity):
     self.capacity = capacity
@@ -6,7 +10,8 @@ class RingBuffer:
 
   def append(self, item):
     if self.current < self.capacity:
-      self.storage.append(item)
+      # keep track of current item and set it with current 
+      self.storage[self.current] = item
       self.current += 1
 
   def get(self):
@@ -18,6 +23,9 @@ if __name__ == "__main__":
     buffer = RingBuffer(3)
     print(buffer.get())
 
+    buffer.append('a')
+    buffer.append('b')
+    buffer.append('c')
+    buffer.append('d')
 
-
-
+    print(buffer.get())
