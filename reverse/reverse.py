@@ -48,16 +48,27 @@ class LinkedList:
   def reverse_list(self):
     prev = None
     cur = self.head
-
-
     while cur:
-      next_node = cur.next_node
+      #store next node
+      node_store = cur.next_node
 
-      cur.next_node = prev
+      # reverse node here
+      self.head = prev
 
-      print(cur.value)
-      cur = next_node.next_node
+      # step forward cur and prev
+      # if node_store.value != None:
+        # print(node_store.value)
+      cur = node_store
+      prev = cur
 
+
+
+  def print_list(self):
+    cur = self.head
+    while cur:
+      print(cur.value, end=", ")
+      cur = cur.next_node
+    print("")
 
 
 if __name__ == "__main__":  
@@ -67,6 +78,10 @@ if __name__ == "__main__":
   linklist.add_to_head(3)
   linklist.add_to_head(4)
   linklist.add_to_head(5)
-  linklist.reverse_list()
 
+  linklist.print_list()
+
+  linklist.reverse_list()
+  print("\n" * 2)
+  linklist.print_list() 
 
