@@ -15,6 +15,8 @@ class Node:
     # set this node's next_node reference to the passed in node
     self.next_node = new_next
 
+
+
 class LinkedList:
   def __init__(self):
     # reference to the head of the list
@@ -42,6 +44,47 @@ class LinkedList:
     # if we've gotten here, then the target node isn't in our list
     return False
 
+
   def reverse_list(self):
-    # TO BE COMPLETED
-    pass
+
+    prev = None
+    cur = self.head
+
+    while cur:
+      # stoe next node 
+      next_node = cur.next_node
+
+      # change cur to prev
+      # on first entry prev is set to None
+      cur.next_node = prev
+
+      # step to next node 
+      prev = cur
+      cur = next_node
+
+    # set head
+    self.head = prev
+
+
+  def print_list(self):
+    cur = self.head
+    while cur:
+      print(cur.value, end=", ")
+      cur = cur.next_node
+    print("")
+
+
+if __name__ == "__main__":  
+  linklist = LinkedList()
+  linklist.add_to_head(1)
+  linklist.add_to_head(2)
+  linklist.add_to_head(3)
+  linklist.add_to_head(4)
+  linklist.add_to_head(5)
+
+  linklist.print_list()
+
+  linklist.reverse_list()
+  print("\n" * 2)
+  linklist.print_list() 
+
